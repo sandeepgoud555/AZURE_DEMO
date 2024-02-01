@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: sanapp1nginx1 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sanapp1nginx1
+  template:
+    metadata:
+      labels:
+        app: sanapp1nginx1 
+    spec:
+      containers:
+        - name: sanapp1nginx1 
+          image: sancr1.azurecr.io/sanapp1nginx1
+          ports:
+          - containerPort: 80
