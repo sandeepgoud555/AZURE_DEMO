@@ -13,7 +13,7 @@ provider "azurerm" {
   }
 }
 
-resource "azurerm_resource_group" "ven1_aks_rg" {
+resource "azurerm_resource_group" "san_aks_rg" {
   name     = "san_aks_rg"
   location = "UK South"
 }
@@ -38,11 +38,11 @@ resource "azurerm_kubernetes_cluster" "san_aks" {
 
 resource "azurerm_kubernetes_cluster_node_pool" "sannp" {
   name                  = "sannp"
-  kubernetes_cluster_id = azurerm_kubernetes_cluster.ven1_aks.id
+  kubernetes_cluster_id = azurerm_kubernetes_cluster.san_aks.id
   vm_size               = "Standard_DS2_v2"
   node_count            = 1
 
   tags = {
-    Environment = "test"
+    Environment = "test1"
   }
 }
