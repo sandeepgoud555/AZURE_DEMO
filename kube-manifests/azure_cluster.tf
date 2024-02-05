@@ -22,7 +22,7 @@ resource "azurerm_kubernetes_cluster" "san_aks" {
   name                = "san_aks"
   location            = azurerm_resource_group.san_aks_rg.location
   resource_group_name = azurerm_resource_group.san_aks_rg.name
-  dns_prefix          = "san_aks"
+  dns_prefix          = "san-aks"
 
   default_node_pool {
     name       = "sanpool"
